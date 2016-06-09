@@ -29,6 +29,7 @@ group :development, :test do
   gem 'rspec-rails', '3.1.0'
 
   gem 'rubocop'
+  gem 'annotate'
 
   # Use Factory Girl for generating random test data
   gem 'factory_girl_rails'
