@@ -1,6 +1,5 @@
 source 'https://ruby.taobao.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '>= 5.0.0.rc1', '< 5.1'
 # Use sqlite3 as the database for Active Record
@@ -20,9 +19,19 @@ gem 'puma', '~> 3.0'
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
 
+gem 'mysql2', '~> 0.4.4'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+
+  # Use RSpec for specs
+  gem 'rspec-rails', '3.1.0'
+
+  gem 'rubocop'
+
+  # Use Factory Girl for generating random test data
+  gem 'factory_girl_rails'
 end
 
 group :development do
