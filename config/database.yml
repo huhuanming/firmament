@@ -1,14 +1,10 @@
 development: &default
-  adapter: mysql2
   database: firmament
-  username: root
-  password: '910824'
-  encoding: utf8mb4
-  reconnect: true
-  pool: 30
-  timeout : 3000
-  port: 3306
-
+  adapter: sqlite3
+  pool: 5
+  timeout: 5000
+production:
+  <<: *default
 test:
   <<: *default
   database: firmament_test
