@@ -11,12 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160609102106) do
+ActiveRecord::Schema.define(version: 20160616172513) do
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "wechat_sessions", force: :cascade do |t|
+    t.string   "openid",     null: false
+    t.string   "hash_store"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["openid"], name: "index_wechat_sessions_on_openid", unique: true
   end
 
 end

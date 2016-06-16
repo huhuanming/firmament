@@ -4,7 +4,7 @@ lock '3.5.0'
 set :user, 'deploy'
 server '120.55.68.201', port: 22, roles: [:web, :app, :db], primary: true
 
-set :application, 'my_app_name'
+set :application, 'firmament'
 set :repo_url, 'git@github.com:huhuanming/firmament.git'
 
 set :application,     'app'
