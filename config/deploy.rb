@@ -4,8 +4,9 @@ lock '3.5.0'
 set :user, 'deploy'
 server '120.55.68.201', port: 22, roles: [:web, :app, :db], primary: true
 
-set :application, 'firmament'
+set :application, 'app'
 set :repo_url, 'git@github.com:huhuanming/firmament.git'
+set :branch, :dev
 
 set :application,     'app'
 set :puma_threads,    [4, 16]
