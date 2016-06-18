@@ -50,6 +50,7 @@ GEM
       rake (>= 10.4, < 12.0)
     arel (7.0.0)
     ast (2.3.0)
+    awesome_print (1.6.1)
     builder (3.2.2)
     byebug (9.0.5)
     capistrano (3.5.0)
@@ -220,6 +221,7 @@ PLATFORMS
 DEPENDENCIES
   active_model_serializers
   annotate
+  awesome_print
   byebug
   capistrano
   capistrano-bundler

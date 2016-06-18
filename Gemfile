@@ -20,6 +20,7 @@ gem 'mysql2', '~> 0.4.4'
 gem 'active_model_serializers'
 gem 'rack-cors'
 
+gem 'awesome_print'
 gem 'wechat'
 
 group :development, :test do

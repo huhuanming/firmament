@@ -12,4 +12,14 @@
 #
 
 class Qrcode < ApplicationRecord
+  before_create do
+    self.code = Qrcode.unique_code
+  end
+
+  def self.unique_code
+    loop do
+      code = [*'a'..'z', *'0'..'9', *'A'..'Z'].sample(8).join
+      return code if Qrcode.find_by(code: code).nil?
+    end
+  end
 end
