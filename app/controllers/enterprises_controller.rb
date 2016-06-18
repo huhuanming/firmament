@@ -39,13 +39,14 @@ class EnterprisesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_enterprise
-      @enterprise = Enterprise.find(params[:id])
-    end
 
-    # Only allow a trusted parameter "white list" through.
-    def enterprise_params
-      params.fetch(:enterprise, {})
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_enterprise
+    @enterprise = Enterprise.find(params[:id])
+  end
+
+  # Only allow a trusted parameter "white list" through.
+  def enterprise_params
+    params.fetch(:enterprise, {})
+  end
 end

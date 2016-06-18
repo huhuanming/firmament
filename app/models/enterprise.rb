@@ -12,4 +12,5 @@
 #
 
 class Enterprise < ApplicationRecord
+  has_many :qrcodes
 end

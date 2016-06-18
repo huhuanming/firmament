@@ -39,13 +39,14 @@ class QrcodesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_qrcode
-      @qrcode = Qrcode.find(params[:id])
-    end
 
-    # Only allow a trusted parameter "white list" through.
-    def qrcode_params
-      params.fetch(:qrcode, {})
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_qrcode
+    @qrcode = Qrcode.find(params[:id])
+  end
+
+  # Only allow a trusted parameter "white list" through.
+  def qrcode_params
+    params.fetch(:qrcode, {})
+  end
 end

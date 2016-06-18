@@ -13,6 +13,5 @@
 
 FactoryGirl.define do
   factory :enterprise do
-    
   end
 end

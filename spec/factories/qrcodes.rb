@@ -13,6 +13,5 @@
 
 FactoryGirl.define do
   factory :qrcode do
-    
   end
 end

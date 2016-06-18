@@ -12,6 +12,8 @@
 #
 
 class Qrcode < ApplicationRecord
+  belongs_to :enterprise
+
   before_create do
     self.code = Qrcode.unique_code
   end

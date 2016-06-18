@@ -18,142 +18,140 @@ require 'rails_helper'
 # Message expectations are only used when there is no simpler way to specify
 # that an instance is receiving a specific message.
 
-RSpec.describe QrcodesController, :type => :controller do
-
+RSpec.describe QrcodesController, type: :controller do
   # This should return the minimal set of attributes required to create a valid
   # Qrcode. As you add validations to Qrcode, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
-  }
+  let(:valid_attributes) do
+    skip('Add a hash of attributes valid for your model')
+  end
 
-  let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
-  }
+  let(:invalid_attributes) do
+    skip('Add a hash of attributes invalid for your model')
+  end
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
   # QrcodesController. Be sure to keep this updated too.
   let(:valid_session) { {} }
 
-  describe "GET index" do
-    it "assigns all qrcodes as @qrcodes" do
+  describe 'GET index' do
+    it 'assigns all qrcodes as @qrcodes' do
       qrcode = Qrcode.create! valid_attributes
       get :index, {}, valid_session
       expect(assigns(:qrcodes)).to eq([qrcode])
     end
   end
 
-  describe "GET show" do
-    it "assigns the requested qrcode as @qrcode" do
+  describe 'GET show' do
+    it 'assigns the requested qrcode as @qrcode' do
       qrcode = Qrcode.create! valid_attributes
-      get :show, {:id => qrcode.to_param}, valid_session
+      get :show, { id: qrcode.to_param }, valid_session
       expect(assigns(:qrcode)).to eq(qrcode)
     end
   end
 
-  describe "GET new" do
-    it "assigns a new qrcode as @qrcode" do
+  describe 'GET new' do
+    it 'assigns a new qrcode as @qrcode' do
       get :new, {}, valid_session
       expect(assigns(:qrcode)).to be_a_new(Qrcode)
     end
   end
 
-  describe "GET edit" do
-    it "assigns the requested qrcode as @qrcode" do
+  describe 'GET edit' do
+    it 'assigns the requested qrcode as @qrcode' do
       qrcode = Qrcode.create! valid_attributes
-      get :edit, {:id => qrcode.to_param}, valid_session
+      get :edit, { id: qrcode.to_param }, valid_session
       expect(assigns(:qrcode)).to eq(qrcode)
     end
   end
 
-  describe "POST create" do
-    describe "with valid params" do
-      it "creates a new Qrcode" do
-        expect {
-          post :create, {:qrcode => valid_attributes}, valid_session
-        }.to change(Qrcode, :count).by(1)
+  describe 'POST create' do
+    describe 'with valid params' do
+      it 'creates a new Qrcode' do
+        expect do
+          post :create, { qrcode: valid_attributes }, valid_session
+        end.to change(Qrcode, :count).by(1)
       end
 
-      it "assigns a newly created qrcode as @qrcode" do
-        post :create, {:qrcode => valid_attributes}, valid_session
+      it 'assigns a newly created qrcode as @qrcode' do
+        post :create, { qrcode: valid_attributes }, valid_session
         expect(assigns(:qrcode)).to be_a(Qrcode)
         expect(assigns(:qrcode)).to be_persisted
       end
 
-      it "redirects to the created qrcode" do
-        post :create, {:qrcode => valid_attributes}, valid_session
+      it 'redirects to the created qrcode' do
+        post :create, { qrcode: valid_attributes }, valid_session
         expect(response).to redirect_to(Qrcode.last)
       end
     end
 
-    describe "with invalid params" do
-      it "assigns a newly created but unsaved qrcode as @qrcode" do
-        post :create, {:qrcode => invalid_attributes}, valid_session
+    describe 'with invalid params' do
+      it 'assigns a newly created but unsaved qrcode as @qrcode' do
+        post :create, { qrcode: invalid_attributes }, valid_session
         expect(assigns(:qrcode)).to be_a_new(Qrcode)
       end
 
       it "re-renders the 'new' template" do
-        post :create, {:qrcode => invalid_attributes}, valid_session
-        expect(response).to render_template("new")
+        post :create, { qrcode: invalid_attributes }, valid_session
+        expect(response).to render_template('new')
       end
     end
   end
 
-  describe "PUT update" do
-    describe "with valid params" do
-      let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
-      }
-
-      it "updates the requested qrcode" do
-        qrcode = Qrcode.create! valid_attributes
-        put :update, {:id => qrcode.to_param, :qrcode => new_attributes}, valid_session
-        qrcode.reload
-        skip("Add assertions for updated state")
+  describe 'PUT update' do
+    describe 'with valid params' do
+      let(:new_attributes) do
+        skip('Add a hash of attributes valid for your model')
       end
 
-      it "assigns the requested qrcode as @qrcode" do
+      it 'updates the requested qrcode' do
         qrcode = Qrcode.create! valid_attributes
-        put :update, {:id => qrcode.to_param, :qrcode => valid_attributes}, valid_session
+        put :update, { id: qrcode.to_param, qrcode: new_attributes }, valid_session
+        qrcode.reload
+        skip('Add assertions for updated state')
+      end
+
+      it 'assigns the requested qrcode as @qrcode' do
+        qrcode = Qrcode.create! valid_attributes
+        put :update, { id: qrcode.to_param, qrcode: valid_attributes }, valid_session
         expect(assigns(:qrcode)).to eq(qrcode)
       end
 
-      it "redirects to the qrcode" do
+      it 'redirects to the qrcode' do
         qrcode = Qrcode.create! valid_attributes
-        put :update, {:id => qrcode.to_param, :qrcode => valid_attributes}, valid_session
+        put :update, { id: qrcode.to_param, qrcode: valid_attributes }, valid_session
         expect(response).to redirect_to(qrcode)
       end
     end
 
-    describe "with invalid params" do
-      it "assigns the qrcode as @qrcode" do
+    describe 'with invalid params' do
+      it 'assigns the qrcode as @qrcode' do
         qrcode = Qrcode.create! valid_attributes
-        put :update, {:id => qrcode.to_param, :qrcode => invalid_attributes}, valid_session
+        put :update, { id: qrcode.to_param, qrcode: invalid_attributes }, valid_session
         expect(assigns(:qrcode)).to eq(qrcode)
       end
 
       it "re-renders the 'edit' template" do
         qrcode = Qrcode.create! valid_attributes
-        put :update, {:id => qrcode.to_param, :qrcode => invalid_attributes}, valid_session
-        expect(response).to render_template("edit")
+        put :update, { id: qrcode.to_param, qrcode: invalid_attributes }, valid_session
+        expect(response).to render_template('edit')
       end
     end
   end
 
-  describe "DELETE destroy" do
-    it "destroys the requested qrcode" do
+  describe 'DELETE destroy' do
+    it 'destroys the requested qrcode' do
       qrcode = Qrcode.create! valid_attributes
-      expect {
-        delete :destroy, {:id => qrcode.to_param}, valid_session
-      }.to change(Qrcode, :count).by(-1)
+      expect do
+        delete :destroy, { id: qrcode.to_param }, valid_session
+      end.to change(Qrcode, :count).by(-1)
     end
 
-    it "redirects to the qrcodes list" do
+    it 'redirects to the qrcodes list' do
       qrcode = Qrcode.create! valid_attributes
-      delete :destroy, {:id => qrcode.to_param}, valid_session
+      delete :destroy, { id: qrcode.to_param }, valid_session
       expect(response).to redirect_to(qrcodes_url)
     end
   end
-
 end
