@@ -1,5 +1,5 @@
 development: &default
-  database: firmament
+  database: firmament.sqlite
   adapter: sqlite3
   pool: 5
   timeout: 5000
@@ -7,4 +7,4 @@ production:
   <<: *default
 test:
   <<: *default
-  database: firmament_test
+  database: firmament_test.sqlite

@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(version: 20160618142604) do
 
   create_table "enterprises", force: :cascade do |t|
-    t.string   "name"
+    t.string   "name",        null: false
     t.string   "address"
     t.string   "owner_name"
     t.string   "owner_phone"
@@ -23,8 +23,8 @@ ActiveRecord::Schema.define(version: 20160618142604) do
   end
 
   create_table "qrcodes", force: :cascade do |t|
-    t.string   "code"
-    t.integer  "creator_id"
+    t.string   "code",          null: false
+    t.integer  "creator_id",    null: false
     t.integer  "enterprise_id"
     t.integer  "goods_id"
     t.datetime "created_at",    null: false
@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20160618142604) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "name"
+    t.string   "name",       null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
