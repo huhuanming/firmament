@@ -1,17 +1,24 @@
 # == Route Map
 #
-# Prefix Verb   URI Pattern          Controller#Action
-# wechat POST   /wechat(.:format)    wechats#create
-#        GET    /wechat(.:format)    wechats#show
-#  users GET    /users(.:format)     users#index
-#        POST   /users(.:format)     users#create
-#   user GET    /users/:id(.:format) users#show
-#        PATCH  /users/:id(.:format) users#update
-#        PUT    /users/:id(.:format) users#update
-#        DELETE /users/:id(.:format) users#destroy
+#  Prefix Verb   URI Pattern            Controller#Action
+# qrcodes GET    /qrcodes(.:format)     qrcodes#index
+#         POST   /qrcodes(.:format)     qrcodes#create
+#  qrcode GET    /qrcodes/:id(.:format) qrcodes#show
+#         PATCH  /qrcodes/:id(.:format) qrcodes#update
+#         PUT    /qrcodes/:id(.:format) qrcodes#update
+#         DELETE /qrcodes/:id(.:format) qrcodes#destroy
+#  wechat POST   /wechat(.:format)      wechats#create
+#         GET    /wechat(.:format)      wechats#show
+#   users GET    /users(.:format)       users#index
+#         POST   /users(.:format)       users#create
+#    user GET    /users/:id(.:format)   users#show
+#         PATCH  /users/:id(.:format)   users#update
+#         PUT    /users/:id(.:format)   users#update
+#         DELETE /users/:id(.:format)   users#destroy
 #
 
 Rails.application.routes.draw do
+  resources :qrcodes
   resource :wechat, only: [:show, :create]
   resources :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

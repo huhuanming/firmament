@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160616172513) do
+ActiveRecord::Schema.define(version: 20160618134919) do
+
+  create_table "qrcodes", force: :cascade do |t|
+    t.string   "code"
+    t.integer  "creator_id"
+    t.integer  "enterprise_id"
+    t.integer  "goods_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
