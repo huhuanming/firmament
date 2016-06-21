@@ -1,9 +1,11 @@
 default: &default
-  appid: "wx8dfc47b762f56954"
-  secret: "d50098d88cf618a7415877ddc804c5a5"
-  token:  "bBZFTrAbn6Rkt2"
+  appid: "wx3f5e03a894a3a50c"
+  secret: "4f261635fa2c1cd96a938667766831df"
+  token:  "8jsbVJBivTtCTHKcrsDAHHorm9gNui"
   access_token: "/var/tmp/wechat_access_token"
   jsapi_ticket: "/var/tmp/wechat_jsapi_ticket"
+  # encrypt_mode: false
+  encoding_aes_key:  "O4a0Lnl0W9wrBT6coewaof0OIa6VJwmZHopqdYFqb3G"
 
 development:
   <<: *default
