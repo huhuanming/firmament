@@ -11,36 +11,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_160_618_142_604) do
-  create_table 'enterprises', force: :cascade do |t|
-    t.string   'name',        null: false
-    t.string   'address'
-    t.string   'owner_name'
-    t.string   'owner_phone'
-    t.datetime 'created_at',  null: false
-    t.datetime 'updated_at',  null: false
+ActiveRecord::Schema.define(version: 20160618142604) do
+
+  create_table "enterprises", force: :cascade do |t|
+    t.string   "name",        null: false
+    t.string   "address"
+    t.string   "owner_name"
+    t.string   "owner_phone"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
-  create_table 'qrcodes', force: :cascade do |t|
-    t.string   'code',          null: false
-    t.integer  'creator_id',    null: false
-    t.integer  'enterprise_id'
-    t.integer  'goods_id'
-    t.datetime 'created_at',    null: false
-    t.datetime 'updated_at',    null: false
+  create_table "qrcodes", force: :cascade do |t|
+    t.string   "code",          null: false
+    t.integer  "creator_id",    null: false
+    t.integer  "enterprise_id"
+    t.integer  "goods_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
-  create_table 'users', force: :cascade do |t|
-    t.string   'name',       null: false
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
+  create_table "users", force: :cascade do |t|
+    t.string   "name",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table 'wechat_sessions', force: :cascade do |t|
-    t.string   'openid',     null: false
-    t.string   'hash_store'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.index ['openid'], name: 'index_wechat_sessions_on_openid', unique: true
+  create_table "wechat_sessions", force: :cascade do |t|
+    t.string   "openid",     null: false
+    t.string   "hash_store"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["openid"], name: "index_wechat_sessions_on_openid", unique: true
   end
+
 end
