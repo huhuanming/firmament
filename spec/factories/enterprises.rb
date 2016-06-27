@@ -3,7 +3,7 @@
 # Table name: enterprises
 #
 #  id          :integer          not null, primary key
-#  name        :string
+#  name        :string           not null
 #  address     :string
 #  owner_name  :string
 #  owner_phone :string

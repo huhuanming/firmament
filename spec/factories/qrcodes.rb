@@ -3,8 +3,8 @@
 # Table name: qrcodes
 #
 #  id            :integer          not null, primary key
-#  code          :string
-#  creator_id    :integer
+#  code          :string           not null
+#  creator_id    :integer          not null
 #  enterprise_id :integer
 #  goods_id      :integer
 #  created_at    :datetime         not null
