@@ -12,5 +12,5 @@
 #
 
 class QrcodeSerializer < ActiveModel::Serializer
-  attributes :code
+  attributes :id, :code
 end
