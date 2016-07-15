@@ -9,7 +9,6 @@ default: &default
 
 development:
   <<: *default
-  trusted_domain_fullname: "http://your_dev.proxy.qqbrowser.cc"
 
 test:
   <<: *default

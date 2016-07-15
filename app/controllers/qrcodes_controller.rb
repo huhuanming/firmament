@@ -1,8 +1,13 @@
 class QrcodesController < ApplicationController
   before_action :set_qrcode, only: [:show, :update, :destroy]
+  wechat_api
 
   # GET /qrcodes
   def index
+    # wechat_oauth2 do |openid|
+    #   ap openid
+    # end
+    ap wechat.jsapi_ticket.signature('https://meiqia.com')
     @qrcodes = Qrcode.all
 
     render json: @qrcodes
